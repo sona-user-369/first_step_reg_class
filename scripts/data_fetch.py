@@ -1,7 +1,8 @@
 import os
 import tarfile
-from  six.moves import urllib
+from six.moves import urllib
 import pandas as pd
+
 
 def fetch_data(data_info: dict):
     data_path = data_info['data_path']
@@ -15,7 +16,8 @@ def fetch_data(data_info: dict):
     data_tgz.extractall(path=data_path)
     data_tgz.close()
     print('data_fetch done...')
-    
+
+
 def load_data(data_path, filename):
     csv_path = os.path.join(data_path, filename)
     return pd.read_csv(csv_path)
